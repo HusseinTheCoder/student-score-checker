@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+
+/shelf/
+/workspace.xml
+/queries/
+/dataSources/
+/dataSources.local.xml
+/httpRequests/

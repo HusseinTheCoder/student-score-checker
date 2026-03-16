@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Student Score Checker</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- CSS File Link -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="main-container">
+  <!-- 1. Header Section -->
+  <header class="header">
+    <h1>Mini Student <span>Score Checker</span></h1>
+    <p>Enter academic data below to generate a professional performance report.</p>
+  </header>
+
+  <div class="glass-layout">
+    <!-- 2. Input Form Section -->
+    <section class="form-section">
+      <div class="card">
+        <h2 class="section-title">Student Information</h2>
+
+        <!-- Validation Message Area -->
+        <div id="error-message" class="error-box hidden">
+          Please fill in all fields correctly!
+        </div>
+
+        <div class="input-group">
+          <label for="studentName">Student Full Name</label>
+          <input type="text" id="studentName" placeholder="e.g. John Doe">
+        </div>
+
+        <div class="grid-inputs">
+          <div class="input-group">
+            <label for="math">Math Score</label>
+            <input type="number" id="math" placeholder="0-100" min="0" max="100">
+          </div>
+          <div class="input-group">
+            <label for="english">English Score</label>
+            <input type="number" id="english" placeholder="0-100" min="0" max="100">
+          </div>
+          <div class="input-group">
+            <label for="science">Science Score</label>
+            <input type="number" id="science" placeholder="0-100" min="0" max="100">
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="reportType">Report Type</label>
+          <select id="reportType">
+            <option value="short">Short Report (Summary)</option>
+            <option value="detailed">Detailed Report (All Stats)</option>
+          </select>
+        </div>
+
+        <!-- 3. Action Buttons -->
+        <div class="button-group">
+          <button id="checkBtn" class="btn btn-primary">Check Result</button>
+          <button id="resetBtn" class="btn btn-secondary">Reset</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Result Display Card -->
+    <section class="result-section">
+      <div id="resultPlaceholder" class="placeholder-content">
+        <div class="icon-box">📊</div>
+        <h3>Ready to Check?</h3>
+        <p>Enter data and click the button to see the results here.</p>
+      </div>
+
+      <div id="resultCard" class="card result-card hidden">
+        <div class="result-header">
+          <h2 id="resStudentName">Student Name</h2>
+          <span id="resStatus" class="badge">Pass</span>
+        </div>
+
+        <div class="score-grid">
+          <div class="score-item highlight">
+            <span class="label">Grade</span>
+            <span id="resGrade" class="value">A</span>
+          </div>
+          <div class="score-item highlight">
+            <span class="label">Average</span>
+            <span id="resAverage" class="value">00.0</span>
+          </div>
+        </div>
+
+        <!-- This section shows/hides based on Report Type -->
+        <div id="detailedInfo" class="detailed-info">
+          <hr class="divider">
+          <div class="stats-list">
+            <div class="stat-row"><span>Math:</span> <span id="resMath">0</span></div>
+            <div class="stat-row"><span>English:</span> <span id="resEnglish">0</span></div>
+            <div class="stat-row"><span>Science:</span> <span id="resScience">0</span></div>
+            <div class="stat-row total-row"><span>Total Score:</span> <span id="resTotal">0</span></div>
+          </div>
+        </div>
+
+        <div class="remark-box">
+          <p><strong>Remark:</strong> <span id="resRemark">Keep it up!</span></p>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- JS File Link -->
+<script src="index.js"></script>
+</body>
+</html>
